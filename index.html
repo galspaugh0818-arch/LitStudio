@@ -1,110 +1,41 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Index Page</title>
-	<meta name="description" content="ART116 Web Page Design course overview, objectives, and exercises.">
-<meta name="keywords" content="ART116, web page design, HTML, CSS, NVCC">
-	
-
-    <style>
-        /* general rules for the body tag */
-        body {
-            font-family: source-sans-pro;
-            background-color: #DBD0FC;
-            color: #000000;
-            margin: 0;
-            font-style: normal;
-            font-weight: 200;
-        }
-
-        /* margin and padding rules for all the text tags */
-        h1, h2, h3, h4, h5, h6, p {
-            margin-top: 0;     
-            padding-right: 15px;
-            padding-left: 15px;
-        }
-
-        /* link styles */
-        a:link { color: #42413C; text-decoration: none; }
-        a:visited { color: #6E6C64; text-decoration: underline; }
-        a:hover { text-decoration: underline; }
-        a:active { text-decoration: underline; color: #42413C; }
-
-        /* rules for the container */
-        .container {
-            width: 1200px;
-            margin-left: auto;
-            margin-right: auto; /* centers container */
-            background-color: #FFFFFF;
-        }
-
-        header {
-            height: 100px;
-            background-color: #AEAEAE;
-            border-bottom: 1px solid #000000;
-        }
-
-        .student {
-            padding-top: 50px;
-        }
-
-        main {
-            padding: 10px 0;
-        }
-
-        main ol {
-            list-style-type: none;
-            line-height: 2em;
-            padding: 10px;
-        }
-
-        main ol li {
-            margin-left: 10px;
-        }
-
-        footer {
-            background-color: #AEAEAE;
-            border-top: 1px solid #000000;
-            padding: 10px 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LitStudio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
 </head>
-
 <body>
-    <div class="container">
-        <header>
-            <p class="student">ART116 Web Page Design | Gregory Alspaugh | Instructor: Ed Kramer.</p>
-        </header>
+  <header>
+    <h1>✨ LitStudio ✨</h1>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+    </nav>
+  </header>
 
-        <main>
-    <h1>Course Overview</h1>
-    <p>This course introduces students to web page design using HTML and CSS. Students learn to create structured, styled web pages and apply best practices in web development.</p>
+  <main>
+    <section class="hero">
+      <h2>Welcome to My Creative World</h2>
+      <p>Explore my artwork, theatrical lighting projects, and digital experiments.</p>
+    </section>
 
-    <p><img src="images/glenn-carstens-peters-npxXWgQ33ZQ-unsplash.jpg" width="250" height="250" alt="Example Web Design Image"></p>
+    <section class="gallery">
+      <h2>Exercises & Projects</h2>
+      <div class="cards">
+        <div class="card"><a href="exercises/aigen4.html">Aigen4</a></div>
+    <div class="card"><a href="exercises/aigen5.html">Aigen5</a></div>
+    <div class="card"><a href="exercises/aigen6.html">Aigen6</a></div>
+    <div class="card"><a href="exercises/indexTemplate2.html">Index Template 2</a></div>
+    <div class="card"><a href="exercises/linkExcer2.html">Link Excer2</a></div>
+    <div class="card"><a href="exercises/tagexcer3.html">Tag Excer3</a></div>
+      </div>
+    </section>
+  </main>
 
-    <ol>
-       <li><a href="excersise/linkExcer1.html">Link Exercise</a></li>
-       <li><a href="excersise/indexTemplate2.html">Index Page Template</a></li>
-       <li><a href="excersise/tagexcer3.html">Tag Exercise</a></li>
-       <<li><a href="excersise/aigen4.html">Dgogo Page</a></li>
-        <li><a href="excersise/aigen5.html">Second Page</a></li>
-        <li><a href="excersise/aigen6.html">Untitled Page 2</a></li>
-    </ol>
-
-    <h2>Course Objectives</h2>
-    <p>By the end of this course, students will be able to:</p>
-    <ol style="margin-left: 5px;">
-        <li>Design web pages using HTML and CSS.</li>
-        <li>Apply layout techniques for two-column and multi-column designs.</li>
-        <li>Incorporate images, links, and lists effectively.</li>
-        <li>Follow best practices for accessible and semantic web content.</li>
-    </ol>
-</main>
-
-        <footer>
-            <p><a href="https://www.nvcc.edu" target="_blank" rel="noopener noreferrer">NVCC Home</a></p>
-        </footer>
-    </div>
+  <footer>
+    <p>&copy; 2025 LitStudio | Designed by Greg</p>
+  </footer>
 </body>
 </html>
