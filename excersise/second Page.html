@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Second Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:700|Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            overflow: hidden;
+            font-family: 'Orbitron', Arial, sans-serif;
+        }
+        .paint-splash {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.7;
+            mix-blend-mode: multiply;
+            animation: splash 2s infinite alternate;
+        }
+        @keyframes splash {
+            0% { transform: scale(1) rotate(0deg);}
+            100% { transform: scale(1.2) rotate(20deg);}
+        }
+        .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding-top: 80px;
+        }
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3em;
+            color: #ff5e62;
+            text-shadow: 2px 2px 8px #fff, 0 0 10px #ff9966;
+        }
+        p {
+            font-size: 1.3em;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: linear-gradient(90deg, #36d1c4, #ff5e62);
+            color: #fff;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            transition: background 0.3s, transform 0.2s;
+            font-family: 'Orbitron', Arial, sans-serif;
+        }
+        .back-btn:hover {
+            background: linear-gradient(90deg, #ff5e62, #36d1c4);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Paint splashes -->
+    <div class="paint-splash" style="width:180px; height:180px; background:#36d1c4; top:40px; left:60px;"></div>
+    <div class="paint-splash" style="width:120px; height:120px; background:#ff5e62; top:300px; left:80vw;"></div>
+    <div class="paint-splash" style="width:90px; height:90px; background:#fcb69f; top:60vh; left:20vw;"></div>
+    <div class="paint-splash" style="width:140px; height:140px; background:#ffecd2; top:70vh; left:70vw;"></div>
+    <div class="paint-splash" style="width:100px; height:100px; background:#ff9966; top:20vh; left:50vw;"></div>
+    <div class="container">
+        <h1>Welcome to the Second Page!</h1>
+        <p>This page is a burst of color and creativity.<br>
+        Click below to return to the homepage.</p>
+        <p><a href="../index.html">Back to Index Page</a></p>
+    </div>
+</body>
+</html>
