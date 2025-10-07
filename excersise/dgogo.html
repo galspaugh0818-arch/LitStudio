@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Open My Links — Tap to Launch</title>
+<style>
+  :root{
+    --accent:#da2c38;
+    --bg:#f4f6fb;
+    --card:#ffffff;
+    --muted:#556;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
+    background:linear-gradient(180deg,var(--bg),#eef2ff 60%);
+    color:#111;
+    -webkit-font-smoothing:antialiased;
+    padding:24px;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .wrap{
+    width:100%;
+    max-width:920px;
+    background:var(--card);
+    border-radius:14px;
+    box-shadow:0 10px 30px rgba(18,30,80,0.08);
+    overflow:hidden;
+  }
+  header{
+    padding:28px;
+    background:linear-gradient(90deg,#ffffff 0,#f7f7ff 100%);
+    border-bottom:1px solid rgba(18,30,80,0.04);
+  }
+  header h1{margin:0;font-size:1.35rem;color:var(--accent)}
+  header p{margin:6px 0 0;color:var(--muted);font-size:.95rem}
+  main{display:grid;grid-template-columns:1fr 360px;gap:20px;padding:26px}
+  /* main left - action */
+  .action{
+    padding:18px;
+    border-radius:10px;
+    background:linear-gradient(180deg,#fff,#fbfcff);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+  }
+  .big-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    background:var(--accent);
+    color:#fff;
+    border:none;
+    padding:18px;
+    width:100%;
+    border-radius:10px;
+    font-weight:700;
+    font-size:1.05rem;
+    cursor:pointer;
+    box-shadow:0 8px 22px rgba(218,44,56,0.18);
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .big-btn:active{transform:translateY(1px)}
+  .hint{margin-top:12px;color:#334; font-size:.95rem}
+  .small{
+    margin-top:18px;
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .link-card{
+    flex:1 1 160px;
+    padding:12px;
+    border-radius:8px;
+    background:#fff;
+    border:1px solid rgba(18,30,80,0.04);
+  }
+  .link-card a{color:var(--accent); font-weight:600; display:block; margin-bottom:6px; text-decoration:none}
+  .link-card p{margin:0;color:var(--muted); font-size:.88rem}
+  /* right column - info */
+  aside{
+    padding:18px;
+    border-radius:10px;
+    background:linear-gradient(180deg,#fff,#fbfbff);
+    border:1px solid rgba(18,30,80,0.04);
+  }
+  aside h3{margin:0 0 8px 0;color:#233}
+  aside p{margin:0;color:var(--muted);font-size:.92rem}
+  footer{
+    padding:18px;
+    border-top:1px solid rgba(18,30,80,0.04);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+  }
+  .muted{color:var(--muted)}
+  .small-note{font-size:.85rem;color:#445}
+  /* responsive */
+  @media(max-width:880px){
+    main{grid-template-columns:1fr; padding:18px}
+    aside{order:2}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap" role="application" aria-label="Open links helper">
+    <header>
+      <h1>Open Links — Tap to Launch</h1>
+      <p>Tap the button once to open all three links in new tabs (mobile browsers typically require a tap to allow multiple tabs).</p>
+    </header>
+
+    <main>
+      <div class="action">
+        <button id="openBtn" class="big-btn" aria-controls="links">
+          🚀 Open the 3 Links Now
+        </button>
+
+        <div class="hint">If your browser blocks popups you can use the manual links below. (Tap the big button first — that's the required gesture.)</div>
+
+        <div id="links" class="small" style="margin-top:16px;">
+          <!-- Fallback/manual link cards -->
+          <div class="link-card">
+            <a href="https://www.youtube.com/watch?v=3zq25WRfNpI" target="_blank" rel="noopener noreferrer">YouTube — Video 1</a>
+            <p>https://www.youtube.com/watch?v=3zq25WRfNpI</p>
+          </div>
+
+          <div class="link-card">
+            <a href="https://www.youtube.com/watch?v=kDrzvrjkuAE" target="_blank" rel="noopener noreferrer">YouTube — Video 2</a>
+            <p>https://www.youtube.com/watch?v=kDrzvrjkuAE</p>
+          </div>
+
+          <div class="link-card">
+            <a href="https://manhuaus.com/manga/return-of-the-apocalypse-class-death-knight/chapter-2/" target="_blank" rel="noopener noreferrer">Manhua — Chapter 2</a>
+            <p>Return of the Apocalypse Class: Death Knight — Chapter 2</p>
+          </div>
+        </div>
+
+        <p style="margin-top:14px" class="small-note muted">
+          Tip: If the automatic opens are blocked, tap the big button then tap each manual link — or add the page to your homescreen for faster access.
+        </p>
+      </div>
+
+      <aside>
+        <h3>How this works</h3>
+        <p>When you tap the big button the script runs as a direct user gesture and attempts to open each URL in a new tab using <code>window.open(..., '_blank')</code>. Browsers may still block tabs if settings are strict — that's why manual links are provided below.</p>
+
+        <h3 style="margin-top:12px">If you want a homescreen shortcut</h3>
+        <p class="muted">On Android: open this file in Chrome, tap menu → Add to Home screen.  
+        On iPhone: open in Safari → Share → Add to Home Screen.</p>
+
+        <h3 style="margin-top:12px">Privacy</h3>
+        <p class="muted">This file runs locally in your browser. No data is sent anywhere.</p>
+      </aside>
+    </main>
+
+    <footer>
+      <div class="muted">Created for you — quick, traditional, and dependable.</div>
+      <div class="muted">Last updated: 2025-09-29</div>
+    </footer>
+  </div>
+
+<script>
+  // URLs to open
+  const urls = [
+    "https://www.youtube.com/watch?v=3zq25WRfNpI",
+    "https://www.youtube.com/watch?v=kDrzvrjkuAE",
+    "https://manhuaus.com/manga/return-of-the-apocalypse-class-death-knight/chapter-2/"
+  ];
+
+  // openLinks will attempt to open each URL in a new tab. It runs on a user gesture.
+  function openLinks() {
+    // Try to open each one. If a popup is blocked, the browser will prevent it.
+    for (let i = 0; i < urls.length; i++) {
+      // small stagger to reduce chance of some blockers grouping them (optional)
+      setTimeout(() => {
+        try {
+          window.open(urls[i], "_blank", "noopener,noreferrer");
+        } catch (e) {
+          // ignore errors — fallback links are visible below
+          console.warn("Could not open", urls[i], e);
+        }
+      }, i * 200);
+    }
+
+    // give user feedback
+    const btn = document.getElementById("openBtn");
+    btn.textContent = "Launched — check your tabs!";
+    btn.disabled = true;
+    btn.style.opacity = "0.9";
+  }
+
+  // wire up click and also allow tapping anywhere in the action area to trigger it
+  document.getElementById("openBtn").addEventListener("click", openLinks);
+
+  // Make the entire action box clickable as an alternate gesture:
+  document.querySelector(".action").addEventListener("click", (e) => {
+    // avoid double-calling if button was the trigger (button click already handled)
+    if (e.target.id === "openBtn") return;
+    if (!document.getElementById("openBtn").disabled) openLinks();
+  }, { once: true });
+</script>
+
+<p><a href="../index.html">Back to Index Page</a></p>
+
+</body>
+</html>
