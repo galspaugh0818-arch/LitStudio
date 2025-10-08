@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ART116 Web Page Design — Gregory Alspaugh</title>
+<meta name="description" content="ART116 Web Page Design course overview, objectives, and exercises.">
+<meta name="keywords" content="ART116, web page design, HTML, CSS, exercises, Gregory Alspaugh">
+
+<style>
+    /* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Source Sans Pro', Arial, sans-serif;
+        background: linear-gradient(135deg, #1e1e2f, #2c2c3c);
+        color: #eaeaea;
+        min-height: 100vh;
+    }
+
+    a {
+        text-decoration: none;
+        color: #DA2C38;
+        transition: color 0.2s;
+    }
+    a:hover {
+        color: #ff6b6b;
+    }
+
+    /* Container */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* Header */
+    header {
+        background: #111122;
+        padding: 30px 20px;
+        border-radius: 12px;
+        text-align: center;
+        margin-bottom: 40px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    }
+    header h1 {
+        font-size: 2rem;
+        color: #DA2C38;
+        margin-bottom: 10px;
+    }
+    header p {
+        font-size: 1rem;
+        color: #bbbbbb;
+    }
+
+    /* Main Content */
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    /* Course Overview */
+    .overview {
+        background: #222233;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    }
+    .overview h2 {
+        color: #DA2C38;
+        margin-bottom: 15px;
+    }
+    .overview p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+    .overview img {
+        max-width: 100%;
+        border-radius: 12px;
+        margin-top: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+
+    /* Exercises Section */
+    .exercises {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+    }
+    .card {
+        background: #1e1e2f;
+        padding: 25px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card a {
+        color: #DA2C38;
+        font-weight: 700;
+        font-size: 1.1rem;
+    }
+    .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 24px rgba(218,44,56,0.4);
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        padding: 25px 10px;
+        margin-top: 50px;
+        background: #111122;
+        border-radius: 12px;
+        color: #aaaaaa;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>ART116 Web Page Design</h1>
+        <p>Instructor: Ed Kramer | Student: Gregory Alspaugh</p>
+    </header>
+
+    <main>
+        <!-- Course Overview -->
+        <section class="overview">
+            <h2>Course Overview</h2>
+            <p>This course introduces students to web page design using HTML and CSS. Students learn to create structured, styled web pages and apply best practices in web development.</p>
+            <img src="https://picsum.photos/600/300" alt="Example Web Design">
+        </section>
+
+        <!-- Exercises -->
+        <section>
+            <h2 class="section-title">Exercises</h2>
+            <div class="exercises">
+                <div class="card"><a href="exercises/aigen4.html">Aigen4</a></div>
+                <div class="card"><a href="exercises/aigen5.html">Aigen5</a></div>
+                <div class="card"><a href="exercises/aigen6.html">Aigen6</a></div>
+                <div class="card"><a href="exercises/indexTemplate2.html">Index Template 2</a></div>
+                <div class="card"><a href="exercises/linkExcer1.html">Link Excer2</a></div>
+                <div class="card"><a href="exercises/tagexcer3.html">Tag Excer3</a></div>
+                <div class="card"><a href="exercises/aigen7.html">Aigen7</a></div>
+            </div>
+        </section>
+
+        <!-- Latest posts -->
+        <section>
+            <h2 class="section-title">Latest posts</h2>
+            <div class="posts-grid">
+                <div class="card"><a href="exercises/aigen7-post1.html">When AI Paints: Creativity or Collage?</a></div>
+                <div class="card"><a href="exercises/aigen7-post2.html">Moderation, Misinformation, and the Attention Economy</a></div>
+                <div class="card"><a href="exercises/aigen7-post3.html">Designing Tools Not Replacements</a></div>
+            </div>
+        </section>
+    </main>
+        </div>
+
+    <!-- Contact Section -->
+    <section class="overview contact-overview">
+        <h2>Contact Me</h2>
+        <p>If you have questions or feedback, you can reach me at either of the emails below:</p>
+        <p>
+            <a class="email-link" href="mailto:gja41492@email.vccs.edu">gja41492@email.vccs.edu</a><br>
+            <a class="email-link" href="mailto:galspaugh0818@gmail.com">galspaugh0818@gmail.com</a>
+        </p>
+    <p class="contact-note">Click an email to open your mail client and send me a message.</p>
+    </section>
+    <footer>
+        &copy; 2025 Gregory Alspaugh — ART116 Web Page Design
+    </footer>
+</div>
+</body>
+
