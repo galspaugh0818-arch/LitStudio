@@ -1,0 +1,177 @@
+:root{
+  --bg-1:#0f0030;
+  --bg-2:#160032;
+  --accent:#7afcff;
+  --accent-2:#ff6bcb;
+  --glass: rgba(255,255,255,0.06);
+  --glass-2: rgba(255,255,255,0.08);
+}
+
+/* utility spacers and containers to replace inline styles */
+.spacer-sm{height:16px}
+.container{max-width:980px;margin:28px auto;padding:0 20px}
+.footer-center{text-align:center;margin-top:18px;z-index:3;position:relative}
+
+/* post and layout helpers previously inline */
+.post-main{max-width:880px;margin:28px auto;padding:20px}
+.post-actions{float:right;display:flex;gap:8px;align-items:center}
+.comments-section{margin-top:22px}
+.comments-placeholder{background:rgba(255,255,255,0.02);padding:12px;border-radius:8px;margin-top:10px}
+.post-card{background:rgba(255,255,255,0.02);padding:16px;border-radius:10px}
+.email-link{color:#DA2C38;font-weight:700}
+
+/* ensure post-actions don't overlap content on narrow screens */
+@media (max-width:760px){
+  .post-actions{float:none;justify-content:flex-start;margin-top:12px}
+}
+
+html,body{height:100%;}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: linear-gradient(120deg,var(--bg-1), var(--bg-2));
+  color:#eaf6ff;
+  /* allow scrolling so content below the fold (analysis card) is reachable */
+  overflow:auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  padding-bottom: 80px; /* avoid clipping controls/footer */
+}
+
+/* full-screen canvas for gooey background */
+canvas#bg {
+  position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block;
+}
+
+.stage{position:relative;z-index:2;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:80px 20px}
+
+.wrap{
+  width:min(1100px,95%);
+  display:grid;grid-template-columns: 1fr 420px;gap:28px;align-items:center;
+}
+
+/* Neon heading */
+.hero{
+  padding:28px;border-radius:20px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));backdrop-filter: blur(6px);box-shadow:0 10px 40px rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.04);
+}
+
+h1.title{
+  font-size: clamp(28px, 5vw, 56px);
+  letter-spacing: -1px;margin:0 0 12px 0;font-weight:800;line-height:1;
+  background: linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 6px 30px rgba(123,255,255,0.06);
+}
+
+p.lead{margin:0 0 18px 0;color:rgba(234,246,255,0.9);font-weight:600}
+
+.buttons{display:flex;gap:12px}
+.btn{
+  padding:10px 16px;border-radius:999px;border:none;cursor:pointer;font-weight:700;color:#081025;background:linear-gradient(90deg,var(--accent),#fff);box-shadow:0 6px 18px rgba(0,0,0,0.45);transition:transform .18s ease;
+}
+.btn.secondary{background:linear-gradient(90deg,#fff, var(--accent-2));}
+.btn:active{transform:translateY(2px) scale(.995)}
+
+/* Right column: glass cards */
+.panel{display:flex;flex-direction:column;gap:18px}
+.card{
+  background: linear-gradient(135deg,var(--glass), var(--glass-2));
+  border-radius:14px;padding:16px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 8px 30px rgba(14,10,30,0.6);transition:transform .25s cubic-bezier(.2,.9,.3,1), box-shadow .25s;
+}
+.card:hover{transform:translateY(-8px) rotateX(6deg);box-shadow:0 20px 60px rgba(18,12,50,0.6)}
+.card h3{margin:0 0 6px 0}
+.meta{color:rgba(234,246,255,0.75);font-size:13px}
+
+/* tiny floating badges */
+.badges{display:flex;gap:10px;margin-top:10px}
+.badge{padding:6px 10px;background:rgba(255,255,255,0.03);border-radius:999px;font-weight:700;color:var(--accent);border:1px solid rgba(255,255,255,0.03)}
+
+/* custom cursor */
+.cursor{position:fixed;top:0;left:0;width:18px;height:18px;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen;background:radial-gradient(circle at 30% 30%, #fff8, #7afcff22);backdrop-filter: blur(2px);transition:width .12s ease,height .12s ease,opacity .12s}
+.home-link{color:var(--accent);font-weight:700;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04);text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,0.45)}
+.home-link:hover{transform:translateY(-3px);box-shadow:0 20px 40px rgba(0,0,0,0.55)}
+
+/* top-right controls */
+.controls{position:fixed;right:18px;top:18px;z-index:9998;display:flex;flex-direction:column;gap:8px}
+.control-box{background:rgba(0,0,0,0.45);border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:10px;color:#eaf6ff;font-weight:600;backdrop-filter: blur(6px);box-shadow:0 8px 20px rgba(0,0,0,0.5)}
+.control-box label{display:flex;gap:8px;align-items:center;cursor:pointer}
+.control-box button{background:var(--accent);border:none;padding:6px 10px;border-radius:8px;color:#041020;font-weight:800;cursor:pointer}
+
+/* Collapsible controls for smaller screens and to avoid overlap */
+.controls.collapsed{opacity:0.22;transform:translateY(-6px)}
+.controls .collapse-toggle{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--accent);padding:6px;border-radius:8px;cursor:pointer}
+
+/* move controls to bottom-right on narrow screens */
+@media (max-width:900px){
+  .controls{right:12px;top:auto;bottom:18px;flex-direction:row;gap:10px;padding:6px}
+  .controls .control-box{padding:6px}
+}
+
+/* blog layout tweaks */
+.blog-article .post-header{display:flex;flex-direction:column;gap:8px}
+.blog-article .post-title{font-size:30px}
+.author-box{display:flex;align-items:center;gap:12px;margin-top:12px;color:rgba(234,246,255,0.8)}
+.featured-image{width:100%;max-height:360px;object-fit:cover;border-radius:10px;margin-top:12px}
+
+/* posts grid and cards */
+.posts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.post-card h4{margin:0 0 6px 0}
+.post-card p{margin:0;color:rgba(234,246,255,0.78)}
+
+.more-posts-title{color:var(--accent);margin-bottom:12px;text-transform:uppercase;letter-spacing:0.6px}
+.post-excerpt{color:rgba(234,246,255,0.78);margin:0 0 8px 0}
+
+/* override some index inline heading styles if present */
+section h2 { text-align:center }
+
+.section-title{margin-bottom:20px;color:var(--accent);text-align:center}
+.contact-overview{background:#222233;margin-top:40px}
+.contact-note{color:#bbbbbb}
+
+/* nicer print for blog posts */
+@media print{
+  .controls, .cursor, .badge, .buttons { display:none !important }
+}
+
+/* Analysis / article card (formal, informational) */
+.analysis-card{
+  margin:28px auto 8px auto;
+  max-width:920px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border-radius:14px;
+  padding:20px 22px;
+  color:rgba(234,246,255,0.95);
+  line-height:1.55;
+  border:1px solid rgba(255,255,255,0.04);
+  box-shadow:0 12px 40px rgba(6,6,12,0.6);
+  position:relative;
+  z-index:5;
+}
+
+/* blog-style article variant */
+.analysis-card.blog-article{max-width:900px;margin:36px auto;padding:28px 32px;border-radius:12px}
+.blog-article .post-title{font-size:28px;color:var(--accent);margin-bottom:6px}
+.blog-article .post-meta{color:rgba(234,246,255,0.7);margin-bottom:12px}
+.blog-article .article-content p{font-size:18px;line-height:1.8;color:rgba(234,246,255,0.95);margin-bottom:16px}
+.blog-article .analysis-section h3{color:#fff;margin-top:12px}
+.share{display:flex;gap:8px;margin-top:8px}
+.share-btn{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);color:var(--accent);padding:6px 10px;border-radius:8px;text-decoration:none}
+.share-btn:hover{background:rgba(255,255,255,0.04)}
+.analysis-card h2{margin:0 0 8px 0;color:var(--accent);font-weight:800}
+.analysis-card p{margin:0;font-size:16px;color:rgba(234,246,255,0.92)}
+.analysis-card .toc{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+.analysis-card .toc a{color:var(--accent);font-weight:700;text-decoration:none;background:rgba(255,255,255,0.02);padding:6px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03)}
+.analysis-section{margin-top:14px;padding-top:12px;border-top:1px dashed rgba(255,255,255,0.03)}
+.analysis-section h3{color:#fff;margin:0 0 8px 0}
+
+/* Print styles: show analysis, hide canvas and interactive bits */
+@media print{
+  canvas#bg, .controls, .cursor, .buttons, .badges, .card:hover { display:none !important; }
+  body{background:#fff;color:#000}
+  .analysis-card{background:#fff;color:#000;box-shadow:none;border:none}
+}
+
+/* accessibility focus */
+:focus{outline:3px solid rgba(122,252,255,0.32);outline-offset:3px}
+
+/* skip link */
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{left:18px;top:18px;width:auto;height:auto;padding:8px 12px;background:#fff;color:#000;border-radius:6px}
