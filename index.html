@@ -21,6 +21,7 @@
         font-family: 'Source Sans Pro', Arial, sans-serif;
         background: linear-gradient(135deg, #1e1e2f, #2c2c3c);
         color: #eaeaea;
+        line-height: 1.6;
         min-height: 100vh;
     }
 
@@ -39,7 +40,7 @@
     .container {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 20px;
+        padding: 30px 20px;
     }
 
     /* =======================
@@ -74,27 +75,39 @@
 
     section {
         background: #222233;
-        padding: 25px;
+        padding: 30px;
         border-radius: 12px;
         box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    section:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.6);
     }
 
     section h2 {
         color: #DA2C38;
         margin-bottom: 20px;
-        font-size: 1.8rem;
+        font-size: 1.9rem;
+        border-bottom: 2px solid #7C63D0;
+        padding-bottom: 10px;
     }
 
     section p {
-        line-height: 1.6;
+        line-height: 1.7;
         margin-bottom: 15px;
+        font-size: 1rem;
     }
 
     section img {
         max-width: 100%;
         border-radius: 12px;
-        margin-top: 15px;
+        margin-top: 20px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     /* =======================
@@ -102,9 +115,10 @@
        ======================= */
     .exercises, .posts-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 25px;
     }
+
     .card {
         background: #1e1e2f;
         padding: 25px;
@@ -113,14 +127,16 @@
         box-shadow: 0 6px 18px rgba(0,0,0,0.4);
         transition: transform 0.2s, box-shadow 0.2s;
     }
+
     .card a {
         color: #DA2C38;
         font-weight: 700;
         font-size: 1.1rem;
     }
+
     .card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 12px 24px rgba(218,44,56,0.4);
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(218,44,56,0.5);
     }
 
     /* =======================
@@ -128,12 +144,13 @@
        ======================= */
     footer {
         text-align: center;
-        padding: 25px 10px;
+        padding: 30px 15px;
         margin-top: 50px;
         background: #111122;
         border-radius: 12px;
         color: #aaaaaa;
         box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+        font-size: 0.95rem;
     }
 
     /* =======================
@@ -145,20 +162,16 @@
         color: #ff6b6b;
         font-weight: 600;
     }
+
     .contact-note {
         font-size: 0.9rem;
         color: #cccccc;
         margin-top: 10px;
     }
-
-    /* Extra “ooooh” and “aaaah” effects */
-    .highlight {
-        color: #FFD166;
-        font-weight: 700;
-    }
 </style>
 </head>
 <body>
+
 <div class="container">
 
     <!-- Header -->
@@ -168,10 +181,11 @@
     </header>
 
     <main>
+
         <!-- Course Overview -->
         <section class="overview">
             <h2>Course Overview</h2>
-            <p>Welcome to <span class="highlight">ART116</span>, where we dive into the fascinating world of web page design! In this course, students explore HTML and CSS to create <span class="highlight">structured</span> and visually compelling websites. Along the way, you'll learn best practices, experiment with layouts, and see your creations come to life. Ooooh, the magic of code turning into design!</p>
+            <p>This course provides a comprehensive introduction to web page design using HTML and CSS. Students learn to structure web pages effectively, apply styling with CSS, and enhance usability. The curriculum emphasizes <strong>best practices</strong> and practical exercises to build a professional and modern web presence.</p>
             <img src="https://picsum.photos/600/300" alt="Example Web Design">
         </section>
 
@@ -203,13 +217,14 @@
         <!-- Contact Section -->
         <section class="overview contact-overview">
             <h2>Contact Me</h2>
-            <p>If you have questions or feedback, you can reach me at either of the emails below. Aaah, I love getting emails!</p>
+            <p>If you have questions or feedback, feel free to reach out via email. I check messages regularly and will respond promptly.</p>
             <p>
                 <a class="email-link" href="mailto:gja41492@email.vccs.edu">gja41492@email.vccs.edu</a><br>
                 <a class="email-link" href="mailto:galspaugh0818@gmail.com">galspaugh0818@gmail.com</a>
             </p>
-            <p class="contact-note">Click an email to open your mail client and send me a message. Ooooh, how convenient!</p>
+            <p class="contact-note">Click an email to open your mail client and send a message.</p>
         </section>
+
     </main>
 
     <footer>
@@ -217,5 +232,6 @@
     </footer>
 
 </div>
+
 </body>
 </html>
