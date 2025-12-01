@@ -1,0 +1,189 @@
+/* ====================================
+   GLOBAL FONT + BODY
+   ==================================== */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #DBD0FC; /* soft lavender */
+    color: #2B2B3F; /* slightly darker for readability */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Headings use Merriweather */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+    margin-top: 0;
+    color: #3A2F5D; /* deep purple */
+}
+
+/* ====================================
+   LINKS
+   ==================================== */
+a:link {
+    color: #5A4DB0; /* muted purple-blue */
+    text-decoration: none;
+}
+
+a:visited {
+    color: #7E7A99; /* soft gray-purple */
+}
+
+a:hover {
+    color: #D3627C; /* raspberry accent */
+    text-decoration: underline;
+}
+
+a:active {
+    color: #3F8C70; /* forest green accent */
+}
+
+/* ====================================
+   CONTAINER
+   ==================================== */
+.container {
+    width: 1020px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    padding: 10px;
+    border: 2px solid #A88DE0; /* richer purple border */
+    border-radius: 8px;         
+}
+
+/* ====================================
+   HEADER
+   ==================================== */
+header {
+    background-color: #DAD0FF; /* gentle lavender */
+    padding: 20px;
+    border-bottom: 3px solid #7C63D0; /* strong purple accent */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .student {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+    color: #3A2F5D; /* match headings */
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #3A2F5D; /* match headings */
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    color: #D3627C; /* raspberry hover */
+}
+
+/* ====================================
+   FOOTER
+   ==================================== */
+footer {
+    background-color: #DAD0FF; /* match header */
+    padding: 10px;
+    text-align: center;
+    border-top: 3px solid #7C63D0;
+    font-size: 0.9em;
+    color: #3A2F5D;
+    margin-top: 30px;
+}
+
+/* ====================================
+   MAIN CONTENT
+   ==================================== */
+main {
+    padding: 20px;
+}
+
+main p {
+    margin-bottom: 1em;
+}
+
+main img {
+    border: 2px solid #7C63D0; /* image border purple */
+    margin: 10px 10px 20px 0;
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+/* ====================================
+   SIDEBAR PAGE LAYOUT
+   ==================================== */
+.sidebar-page main {
+    width: 800px;
+    float: left;
+}
+
+.sidebar-page aside {
+    float: left;
+    width: 200px;
+    background-color: #E1DBFF; /* soft lavender-blue */
+    padding: 15px;
+    margin-right: 20px;
+    border: 1px solid #7C63D0;
+    border-radius: 6px;
+}
+
+.sidebar-page aside h4 {
+    margin-top: 0;
+    color: #3A2F5D;
+}
+
+.sidebar-page aside ol,
+.sidebar-page aside ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sidebar-page aside li {
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #BFA7F0; /* soft complementary border */
+}
+
+/* Clear floats */
+.sidebar-page:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* ====================================
+   TABLES
+   ==================================== */
+table {
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid #7C63D0;
+}
+
+td, th {
+    padding: 10px;
+    text-align: center;
+}
+
+/* ====================================
+   LISTS
+   ==================================== */
+ul, ol {
+    margin-bottom: 1em;
+    padding-left: 20px;
+}
